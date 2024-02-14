@@ -18,7 +18,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="http://localhost:3050/">
-        Cake Bytes
+        DrinkYourFruit
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,32 +42,38 @@ const SignIn = ({ login }) => {
   };
 
   return (    
-    <Grid container component="main" sx={{ height: '100vh', display: 'flex' }}>      
+    <Grid container component="main" sx={{
+      p: 0,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      height: "100vh",
+      paddingLeft: 10,
+      backgroundImage: 'url(/public/assets/LoginPage.jpg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      borderRadius: '1rem',
+      position: 'relative',
+    }}>      
       <Grid
         item
         xs="auto"
+      
       >
-        <Box
-            component="img"
-            sx={{
-                height: '100vh',
-            }}
-            alt="graphic of a koala cake"
-            src="/public/assets/koala_login2.jpg"
-        >
-        </Box>
-      </Grid>
-      <Grid item component={Paper} elevation={6} sx={{ flexGrow: 1 }} square>
+
+        <Box > 
+      <Grid item component={Paper} elevation={6} sx={{ flexGrow: 1, alignItems:"flex-start" }} square >
         <Box
           sx={{
-            my: 8,
-            mx: 4,
+            my: 50,
+            mx: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -125,6 +131,9 @@ const SignIn = ({ login }) => {
           </Box>
         </Box>
       </Grid>
+        </Box>
+      </Grid>
+     
     </Grid>    
   );
 }
